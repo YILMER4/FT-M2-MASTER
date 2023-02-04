@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import logoHenry from "../../assets/logo-henry.png";
 import styleNav from "./NavBar.module.css";
@@ -7,19 +8,25 @@ export default function NavBar() {
   return (
     <div className={styleNav.container}>
       <ul className={styleNav.menu}>
-        <li>
-          <img src={logoHenry} alt="logo-henry" />
-          <img src={logo} alt="logo" />
-        </li>
+        <NavLink to= "/">
+          <li>
+            <img src={logoHenry} alt="logo-henry" />
+            <img src={logo} alt="logo" />
+          </li>
+        </NavLink>
         <li>
           <h1>Central de Cruceros</h1>
         </li>
         <div className={styleNav.options}>
           <li>
-            <span>Navieras</span>
+            <NavLink to="/shipping">
+                <span>Navieras</span>
+            </NavLink>
           </li>
           <li>
-            <span>Promociones</span>
+            <NavLink to="/promotions">
+              <span>Promociones</span>
+            </NavLink>
           </li>
         </div>
       </ul>
